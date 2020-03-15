@@ -1,6 +1,10 @@
-<div class="contents">
-    <div>{{welcomeMsg}}</div>
-    <span>사용자 이름: </span>
-    <input placeholder="이름을 입력해주세요" [(ngModel)]="userName" (ngModelChange)="onChange()">
-    <span><button (click)="showWelcomeMsg()">입력</button></span>
+<div class="input-group mb-3">
+  <div>{{welcomeMsg}}</div>
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="이름을 입력해주세요" [(ngModel)]="userName" (ngModelChange)="onChange()">
+    <div class="input-group-append">
+        <button class="btn btn-success" (click)="showWelcomeMsg()">입력</button>
+    </div>
+  </div>
 </div>
+ 
