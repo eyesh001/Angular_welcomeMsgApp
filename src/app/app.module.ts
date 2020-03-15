@@ -6,6 +6,13 @@ import { AppComponent } from './app.component';
 import { WelcomeMsgComponent } from './welcome-msg/welcome-msg.component';
 import { LangSelectorComponent } from './lang-selector/lang-selector.component';
 import { LangSelectorBtnPipe } from './lang-selector/lang-selector-btn.pipe';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core'; 
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+export function createTranslateLoader(http: HttpClient) { 
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -17,7 +24,13 @@ import { LangSelectorBtnPipe } from './lang-selector/lang-selector-btn.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    TranslateModule.forRoot({ 
+        loader: { provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient] }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
