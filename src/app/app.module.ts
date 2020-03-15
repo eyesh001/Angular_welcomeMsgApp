@@ -5,14 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelcomeMsgComponent } from './welcome-msg/welcome-msg.component';
 import { LangSelectorComponent } from './lang-selector/lang-selector.component';
-import { LangSelectorBinPipe } from './lang-selector/lang-selector-bin.pipe';
+import { LangSelectorBtnPipe } from './lang-selector/lang-selector-btn.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeMsgComponent,
     LangSelectorComponent,
-    LangSelectorBinPipe
+    LangSelectorBtnPipe
   ],
   imports: [
     BrowserModule,

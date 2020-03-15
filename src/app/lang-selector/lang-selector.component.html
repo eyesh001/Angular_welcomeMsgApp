@@ -2,6 +2,6 @@
     <div *ngFor="let lang of langMetadata">
         <img src="{{'/assets/img/' + lang.flagImgName}}">
         <button type="button" (click)="setLnagCode(lang.code)"
-        [disabled]="langCode === lang.code">{{lang.name + '(' + lang.code + ')'}}</button>
+        [disabled]="langCode === lang.code">{{ lang | langSelectorBtn }}</button>
     </div>
 </div>

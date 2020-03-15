@@ -12,7 +12,8 @@ export class WelcomeMsgComponent implements AfterViewInit {
   private valid = false;
   private static CHK_KEYUP_WAIT_SEC = 5000; 
   
-  constructor(public i18nSupportService: I18nSupportService) { }
+  constructor(public i18nSupportService: I18nSupportService) { 
+  }
 
   showWelcomeMsg(){
     this.welcomeMsg = this.i18nSupportService.getWelcomeMsg(this.userName);
@@ -29,5 +30,4 @@ export class WelcomeMsgComponent implements AfterViewInit {
   onChange(){
     this.valid = this.userName.length > 0;
   }
-
 }
