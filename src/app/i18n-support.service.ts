@@ -18,7 +18,6 @@ export class I18nSupportService {
   }
 
   getWelcomeMsg(userName){
-    // todo 복습! 
     const langData = LANG_METADATA.find(lang => lang.code === this.langCode);
     return langData.msg + userName;
   }

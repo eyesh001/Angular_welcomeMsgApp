@@ -1,7 +1,7 @@
-<div>
-    <div *ngFor="let lang of langMetadata">
-        <img src="{{'/assets/img/' + lang.flagImgName}}">
-        <button type="button" (click)="setLnagCode(lang.code)"
-        [disabled]="langCode === lang.code">{{ lang | langSelectorBtn }}</button>
+<div class="row">
+    <div class="col-md-2" *ngFor="let lang of langMetadata">
+            <img src="{{'/assets/img/' + lang.flagImgName}}" class="img-thumbnail" alt="Cinque Terre">
+            <button type="button" class="btn btn-primary" (click)="setLnagCode(lang.code)"
+            [disabled]="langCode === lang.code">{{ lang | langSelectorBtn }}</button>
     </div>
 </div>
