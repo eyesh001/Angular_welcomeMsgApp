@@ -8,5 +8,4 @@ export class LangSelectorBtnPipe implements PipeTransform {
   transform(lang): any {
     return `${lang.name}(${lang.code})`;
   }
-
 }

@@ -7,27 +7,27 @@ import { I18nSupportService } from '../i18n-support.service';
   styleUrls: ['./welcome-msg.component.css']
 })
 export class WelcomeMsgComponent implements AfterViewInit {
-  welcomeMsg = '';
+  welcomeID = '';
   userName = '';
   private valid = false;
-  private static CHK_KEYUP_WAIT_SEC = 5000; 
-  
-  constructor(public i18nSupportService: I18nSupportService) { 
+  private static CHK_KEYUP_WAIT_SEC = 5000;
+
+  constructor(public i18nSupportService: I18nSupportService) {
   }
 
-  showWelcomeMsg(){
-    this.welcomeMsg = this.i18nSupportService.getWelcomeMsg(this.userName);
+  showWelcomeMsg() {
+    this.welcomeID = this.i18nSupportService.getWelcomeMsg(this.userName);
   }
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     const checkTouchedFn = () => {
-      if(this.valid) return;
+      if (this.valid) return;
       alert('이름을 입력해 주세요');
     }
     setTimeout(checkTouchedFn, WelcomeMsgComponent.CHK_KEYUP_WAIT_SEC);
   }
 
-  onChange(){
+  onChange() {
     this.valid = this.userName.length > 0;
   }
 }
